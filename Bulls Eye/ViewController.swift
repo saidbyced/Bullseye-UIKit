@@ -44,9 +44,17 @@ class ViewController: UIViewController {
     
     @IBAction func hitMeButtonPressed() {
         print("Hit Me!")
-        print("Slider value is \(roundedSliderValue)")
-        print("Points for round is \(scoreForRound())")
-        nextRound()
+        
+        let hitMeAlert = UIAlertController(title: hitMeAlertTitle(), message: hitMeAlertMessage(), preferredStyle: .alert)
+        let hitMeAction = UIAlertAction(title: "OK", style: .default, handler: {
+            acion in
+            self.nextRound()
+        })
+        
+        hitMeAlert.addAction(hitMeAction)
+        
+        present(hitMeAlert, animated: true, completion: nil)
+        
     }
     
     @IBAction func startOverButtonPressed() {
@@ -80,8 +88,8 @@ class ViewController: UIViewController {
         switch scoreForRound() {
         case highestValue:
             return highestValue
-        case (highestValue - 1):
-            return (highestValue / 2)
+        case highestValue - 1:
+            return highestValue / 2
         default:
             return 0
         }
@@ -93,23 +101,23 @@ class ViewController: UIViewController {
             return "Perfect!"
         case (highestValue - 1):
             return "Almost!"
-        case (highestValue / 2):
-            return "Not even close!"
+        case (highestValue / 2)...(highestValue - 1):
+            return "Not bad"
         default:
-            return "That could have gone worse..."
+            return "Not even close!"
         }
     }
     
     func hitMeAlertMessage() -> String {
-        let pluralised = (bonusPoints() == 1) ? "" : "s"
+        let pluralised = (scoreForRound() == 1) ? "" : "s"
         
-        var alertMessage = "The slider is at \(roundedSliderValue)" + "\nYou scored \(scoreForRound()) point\(pluralised)"
+        var alertMessage = "The slider is at \(roundedSliderValue)." + "\nYou scored \(scoreForRound()) point\(pluralised) this round"
         
         if bonusPoints() >= (highestValue / 2) {
-            alertMessage += " and \(bonusPoints()) bonus points"
+            alertMessage += "\nplus \(bonusPoints()) bonus points!"
+        } else {
+            alertMessage += "."
         }
-        
-        alertMessage += " this round"
         
         return alertMessage
     }
