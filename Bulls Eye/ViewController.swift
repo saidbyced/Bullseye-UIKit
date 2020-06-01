@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     // MARK: Properties
     
-    var targetValue = Int.random(in: 1...100)
+    let highestValue = 100
+    var targetValue = 0
     var roundedSliderValue = 0
     var totalScore = 0
     var currentRound = 1
@@ -43,6 +44,9 @@ class ViewController: UIViewController {
     
     @IBAction func hitMeButtonPressed() {
         print("Hit Me!")
+        print("Slider value is \(roundedSliderValue)")
+        print("Points for round is \(scoreForRound())")
+        nextRound()
     }
     
     @IBAction func startOverButtonPressed() {
@@ -60,12 +64,34 @@ class ViewController: UIViewController {
     }
     
     func startNewGame() {
-        targetValue = Int.random(in: 1...100)
+        targetValue = Int.random(in: 1...highestValue)
         totalScore = 0
         currentRound = 1
         updateLabels()
         roundedSliderValue = 50
         slider.value = Float(roundedSliderValue)
+    }
+    
+    func scoreForRound() -> Int {
+        highestValue - abs(targetValue - roundedSliderValue)
+    }
+    
+    func bonusPoints() -> Int {
+        switch scoreForRound() {
+        case 100:
+            return 100
+        case 99:
+            return 50
+        default:
+            return 0
+        }
+    }
+    
+    func nextRound() {
+        totalScore += scoreForRound() + bonusPoints()
+        targetValue = Int.random(in: 1...highestValue)
+        currentRound += 1
+        updateLabels()
     }
     
     /*
