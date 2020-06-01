@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1B025570248525FA00F78F60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B02556F248525FA00F78F60 /* ViewController.swift */; };
+		1B0255722485375000F78F60 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0255712485375000F78F60 /* AboutViewController.swift */; };
+		1B0255742485449A00F78F60 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B0255732485449A00F78F60 /* BullsEye.html */; };
+		1B02557724854B1000F78F60 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B02557624854B1000F78F60 /* WebKit.framework */; };
 		1BCA3871247EB122001F1ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA3870247EB122001F1ACF /* AppDelegate.swift */; };
 		1BCA3873247EB122001F1ACF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA3872247EB122001F1ACF /* SceneDelegate.swift */; };
 		1BCA3878247EB122001F1ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BCA3876247EB122001F1ACF /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		1B02556F248525FA00F78F60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B0255712485375000F78F60 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1B0255732485449A00F78F60 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
+		1B02557624854B1000F78F60 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1BCA386D247EB122001F1ACF /* Bull's Eye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bull's Eye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCA3870247EB122001F1ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BCA3872247EB122001F1ACF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,18 +38,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B02557724854B1000F78F60 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B02557524854B1000F78F60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B02557624854B1000F78F60 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1BCA3864247EB121001F1ACF = {
 			isa = PBXGroup;
 			children = (
 				1BCA3884247EB4E6001F1ACF /* README.md */,
 				1BCA386F247EB122001F1ACF /* Bulls Eye */,
 				1BCA386E247EB122001F1ACF /* Products */,
+				1B02557524854B1000F78F60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,10 +77,12 @@
 				1BCA3870247EB122001F1ACF /* AppDelegate.swift */,
 				1BCA3872247EB122001F1ACF /* SceneDelegate.swift */,
 				1BCA3876247EB122001F1ACF /* Main.storyboard */,
+				1B0255712485375000F78F60 /* AboutViewController.swift */,
 				1B02556F248525FA00F78F60 /* ViewController.swift */,
 				1BCA3879247EB128001F1ACF /* Assets.xcassets */,
 				1BCA387B247EB128001F1ACF /* LaunchScreen.storyboard */,
 				1BCA387E247EB128001F1ACF /* Info.plist */,
+				1B0255732485449A00F78F60 /* BullsEye.html */,
 			);
 			path = "Bulls Eye";
 			sourceTree = "<group>";
@@ -128,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCA387D247EB128001F1ACF /* LaunchScreen.storyboard in Resources */,
+				1B0255742485449A00F78F60 /* BullsEye.html in Resources */,
 				1BCA387A247EB128001F1ACF /* Assets.xcassets in Resources */,
 				1BCA3878247EB122001F1ACF /* Main.storyboard in Resources */,
 			);
@@ -142,6 +161,7 @@
 			files = (
 				1B025570248525FA00F78F60 /* ViewController.swift in Sources */,
 				1BCA3871247EB122001F1ACF /* AppDelegate.swift in Sources */,
+				1B0255722485375000F78F60 /* AboutViewController.swift in Sources */,
 				1BCA3873247EB122001F1ACF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
