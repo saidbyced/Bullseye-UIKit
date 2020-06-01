@@ -78,13 +78,40 @@ class ViewController: UIViewController {
     
     func bonusPoints() -> Int {
         switch scoreForRound() {
-        case 100:
-            return 100
-        case 99:
-            return 50
+        case highestValue:
+            return highestValue
+        case (highestValue - 1):
+            return (highestValue / 2)
         default:
             return 0
         }
+    }
+    
+    func hitMeAlertTitle() -> String {
+        switch scoreForRound() {
+        case highestValue:
+            return "Perfect!"
+        case (highestValue - 1):
+            return "Almost!"
+        case (highestValue / 2):
+            return "Not even close!"
+        default:
+            return "That could have gone worse..."
+        }
+    }
+    
+    func hitMeAlertMessage() -> String {
+        let pluralised = (bonusPoints() == 1) ? "" : "s"
+        
+        var alertMessage = "The slider is at \(roundedSliderValue)" + "\nYou scored \(scoreForRound()) point\(pluralised)"
+        
+        if bonusPoints() >= (highestValue / 2) {
+            alertMessage += " and \(bonusPoints()) bonus points"
+        }
+        
+        alertMessage += " this round"
+        
+        return alertMessage
     }
     
     func nextRound() {
@@ -93,7 +120,6 @@ class ViewController: UIViewController {
         currentRound += 1
         updateLabels()
     }
-    
     /*
     // MARK: - Navigation
 
