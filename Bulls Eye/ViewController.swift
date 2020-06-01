@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        startNewGame()
     }
     
     
@@ -47,6 +47,25 @@ class ViewController: UIViewController {
     
     @IBAction func startOverButtonPressed() {
         print("Start Over")
+        startNewGame()
+    }
+    
+    
+    // MARK: Methods
+    
+    func updateLabels() {
+        targetValueLabel.text = String(targetValue)
+        totalScoreLabel.text = String(totalScore)
+        currentRoundLabel.text = String(currentRound)
+    }
+    
+    func startNewGame() {
+        targetValue = Int.random(in: 1...100)
+        totalScore = 0
+        currentRound = 1
+        updateLabels()
+        roundedSliderValue = 50
+        slider.value = Float(roundedSliderValue)
     }
     
     /*
