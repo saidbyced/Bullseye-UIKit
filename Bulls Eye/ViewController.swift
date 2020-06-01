@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     var totalScore = 0
     var currentRound = 1
     
+    @IBOutlet weak var targetValueLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var totalScoreLabel: UILabel!
+    @IBOutlet weak var currentRoundLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
