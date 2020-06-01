@@ -11,17 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     var targetValue = Int.random(in: 1...100)
-    let totalScore = 0
-    let currentRound = 1
-    let roundedSliderValue = 50
-    
-    @IBOutlet weak var targetValueLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var totalScoreLabel: UILabel!
-    @IBOutlet weak var currentRoundLabel: UILabel!
-    
-    @IBAction func sliderMoved() {
-    }
+    var roundedSliderValue = 0
+    var totalScore = 0
+    var currentRound = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
